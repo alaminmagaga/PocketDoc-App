@@ -1,0 +1,79 @@
+{% load static %}
+{% load fontawesome_5 %}
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+<title>index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'w3.css' %}" rel="stylesheet" />
+
+{% fontawesome_5_static %}
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-padding-24" style="font-size:20px;">
+    <a href="{% url 'homepage' %}" class="w3-bar-item w3-button" >Home</a>
+    <a href="{% url 'diabetes' %}" class="w3-bar-item w3-button" >Diabetes</a>
+    <a href="{% url 'heart' %}" class="w3-bar-item w3-button">Heart</a>
+    <a href="{% url 'liver' %}" class="w3-bar-item w3-button">Liver Disease</a>
+    <a href="{% url 'kidney' %}" class="w3-bar-item w3-button">Kidney Disease</a>
+    <a href="http://127.0.0.1:5000/" class="w3-bar-item w3-button">Brain Tumor</a>
+
+  </div>
+</div>
+
+<br><br>
+
+<div class="w3-container">
+    <div>
+        <img  class="w3-card-4 " class="w3-border w3-padding"  style="width: 100%;" src="{% static  'pocketdoc.jpg' %}">
+    
+
+    </div>
+<br><br>
+<div class="w3-container w3-center w3-font-xxlarger"><h1 style="font-size:50px;"><b>Services</b></h1></div>
+    <br>
+<div class="w3-row">
+
+
+        <div class="w3-third w3-container w3-center">
+            <h1>Chat</h1>
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x "></i>
+                <a href="{% url 'accounts:register' %}"><i class=" fas fa-comments fa-stack-1x fa-inverse text-primary" ></i></a>
+            </span>
+            <h4 class="my-3">Chat</h4>
+            
+        </div>
+        <div class="w3-third w3-container w3-center">
+            <h1>Video</h1>
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x "></i>
+                <a href="{% url 'options' %}"><i class="fas fa-video fa-stack-1x fa-inverse"></i></a>
+            </span>
+            <h4 class="my-3">Video Call</h4>
+        
+        </div>
+        <div class="w3-third w3-container w3-center">
+            <h1>Chat</h1>
+            
+                
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <a href="{% url 'appointment' %}"> <i class="fas fa-handshake fa-stack-1x fa-inverse"></i></a>
+                  </span> 
+           
+           
+            <h4 class="my-3">Appointment</h4>
+             
+        </div>
+
+
+    </div>
+ <br><br>
+</div>
+
+</body>
+</html>
