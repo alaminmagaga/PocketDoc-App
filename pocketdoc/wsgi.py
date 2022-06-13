@@ -1,5 +1,5 @@
 """
-WSGI config for whatsappclone1 project.
+WSGI config for pocketdoc project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

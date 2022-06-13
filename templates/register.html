@@ -1,12 +1,15 @@
-{% extends 'base.html' %}
+{% extends "include/base.html" %}
 
-{% block content %}
+{% load static %}
+
+{% block  content %}
+
 <div class="container">
-    <form action="{% url 'accounts:register' %}" method="post">
+    <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Register" class="btn btn-primary">
     </form>
-    <p class="message">registered? <a href="{% url 'accounts:login' %}">Login</a></p>
+    <p class="message">registered? <a href="{% url 'login' %}">Login</a></p>
 </div>
 {% endblock %}

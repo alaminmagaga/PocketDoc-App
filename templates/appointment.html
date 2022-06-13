@@ -1,11 +1,8 @@
+{% extends "include/base.html" %}
+
 {% load static %}
-{% load fontawesome_5 %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{% fontawesome_5_static %}
-<link href="{% static 'w3.css' %}" rel="stylesheet" />
+
+{% block  content %}
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -37,13 +34,6 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-/* Style the container/contact section */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
-}
-
 /* Create two columns that float next to eachother */
 .column {
   float: left;
@@ -67,21 +57,6 @@ input[type=submit]:hover {
   }
 }
 </style>
-</head>
-<body>
-   
-        <div class="w3-bar w3-black w3-padding-24" style="font-size:20px;">
-          <a href="{% url 'home' %}" class="w3-bar-item w3-button" >Home</a>
-          <a href="{% url 'diabetes' %}" class="w3-bar-item w3-button" >Diabetes</a>
-          <a href="{% url 'heart' %}" class="w3-bar-item w3-button">Heart</a>
-          <a href="{% url 'liver' %}" class="w3-bar-item w3-button">Liver Disease</a>
-          <a href="{% url 'kidney' %}" class="w3-bar-item w3-button">Kidney Disease</a>
-          <a href="" class="w3-bar-item w3-button">Brain Tumor</a>
-      
-          
-       
-      </div>
-      
 <div class="container">
   <div style="text-align:center">
     <h2>Book your Appointment</h2>
@@ -92,7 +67,8 @@ input[type=submit]:hover {
       <img src="{% static  'pocketdoc.jpg' %}" style="width:100%">
     </div>
     <div class="column">
-      <form action="post">
+      <form action="{% url 'appointment' %}" method="post">
+        {% csrf_token %}
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Your name..">
         <label for="lname">Last Name</label>
@@ -110,15 +86,15 @@ input[type=submit]:hover {
 
         <input type="submit" id="submit" value="Submit">
 
+        {% if sent %}
         <script>
-            document.getElementById("submit").addEventListener("click", function(){
-                alert("Message Sent Sucessful we have send you a mail " );
-            }); 
+            alert("Message Sent Sucessful we, will get back to you shortly" );
         </script>
+        
+        {% endif %}
       </form>
     </div>
   </div>
 </div>
 
-</body>
-</html>
+{% endblock %}
