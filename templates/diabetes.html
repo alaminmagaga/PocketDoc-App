@@ -1,23 +1,31 @@
-{% extends "include/base.html" %}
-
 {% load static %}
+{% load fontawesome_5 %}
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Pocketdoc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'w3.css' %}" rel="stylesheet" />
 
-{% block  content %}
-        <!-- Hero Area Start-->
-        <div class="slider-area ">
-          <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{% static 'pocketdoc.jpg' %}">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-xl-12">
-                          <div class="hero-cap text-center">
-                              <h2>DIABETES PREDICTION</h2>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Hero Area End -->
+{% fontawesome_5_static %}
+</head>
+<body>
+
+  <div class="w3-bar w3-black w3-padding-24" style="font-size:20px;">
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button" >Home</a>
+    <a href="{% url 'diabetes' %}" class="w3-bar-item w3-button" >Diabetes</a>
+    <a href="{% url 'heart' %}" class="w3-bar-item w3-button">Heart</a>
+    <a href="{% url 'liver' %}" class="w3-bar-item w3-button">Liver Disease</a>
+    <a href="{% url 'kidney' %}" class="w3-bar-item w3-button">Kidney Disease</a>
+    <a href="" class="w3-bar-item w3-button">Brain Tumor</a>
+
+    
+  
+</div>
+
+<br><br>
+
 
 <div class="w3-container w3-card-4 w3-grey" style="width:50%;margin:auto;">
     <form  action="predict2">
@@ -53,4 +61,47 @@
     </form>
   </div>
 
-  {% endblock %}
+    <div class="w3-row">
+
+        <div class="w3-third w3-container w3-center">
+            <h1>Chat</h1>
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x "></i>
+                <a href="{% url 'home' %}"><i class=" fas fa-comments fa-stack-1x fa-inverse text-primary" ></i></a>
+            </span>
+            <h4 class="my-3">Chat</h4>
+            
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="w3-third w3-container w3-center">
+            <h1>Video</h1>
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x "></i>
+                <i class="fas fa-video fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">Video Call</h4>
+            
+            <p class="text-muted">click To have a video confrence with the Doctor.</p>
+        </div>
+        <div class="w3-third w3-container w3-center">
+            <h1>Chat</h1>
+            
+                
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-video fa-stack-1x fa-inverse"></i>
+                  </span> 
+           
+           
+            <h4 class="my-3">Appointment</h4>
+             
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+
+
+    </div>
+ 
+</div>
+
+</body>
+</html>

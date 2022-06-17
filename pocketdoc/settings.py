@@ -29,10 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fontawesome_5',
-    'account',
-    'chat',
-    'home',
-    'prediction',
+    'accounts',
+    'chats',
 ]
 
 MIDDLEWARE = [
@@ -71,9 +69,6 @@ ASGI_APPLICATION = 'pocketdoc.asgi.application'
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        }
         
     },
 }
@@ -140,9 +135,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# We override the defaulf django authentication system to use ours
-# which we have defined in account\models.py
-
-AUTH_USER_MODEL = 'account.User'
