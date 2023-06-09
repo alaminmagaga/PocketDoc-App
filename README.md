@@ -22,20 +22,44 @@ PocketDoc is an all-in-one health platform that aims to revolutionize the way pe
 - **Offline Functionality**: The platform includes offline functionality to ensure accessibility to healthcare services in areas with limited internet connectivity.
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/pocketdoc.git`
-2. Navigate to the project directory: `cd pocketdoc`
-3. Create a virtual environment: `python -m venv venv`
-4. Activate the virtual environment:
-   - For Windows: `venv\Scripts\activate`
-   - For Unix or Linux: `source venv/bin/activate`
-5. Install the required dependencies: `pip install -r requirements.txt`
-6. Run the application: `python manage.py runserver`
+1. Clone the repository: 
+ ```
+ git clone https://github.com/alaminmagaga/PocketDoc-App.git
+  ```
+3. Navigate to the project directory: 
+ ```
+ cd PocketDoc-App
+  ```
+5. Create a virtual environment: 
+ ```
+ python -m venv venv
+  ```
+7. Activate the virtual environment:
+   - For Windows: 
+    ```
+    venv\Scripts\activate
+     ```
+   - For Unix or Linux: 
+    ```
+    source venv/bin/activate
+     ```
+8. Install the required dependencies: 
+ ```
+ pip install -r requirements.txt
+  ```
+10. Run the application: 
+ ```
+ python manage.py runserver
+  ```
 
 ## Usage
-1. Open your web browser and go to `http://localhost:8000` (or the appropriate address and port).
-2. Use the intuitive user interface to explore the available features.
-3. Book medical appointments, input health information, and have online chat consultations with doctors.
-4. Receive personalized health recommendations and early detection of potential health issues.
+1. Open your web browser:
+  ```
+  http://localhost:8000
+   ```
+3. Use the intuitive user interface to explore the available features.
+4. Book medical appointments, input health information, and have online chat consultations with doctors.
+5. detection and prediction of potential health issues.
 
 ## Technologies Used
 - Django: Python web framework for building the application.
